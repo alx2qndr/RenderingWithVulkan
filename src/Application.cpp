@@ -74,6 +74,7 @@ Application::Application()
             case SDL_EVENT_WINDOW_RESIZED:
             case SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED:
                 windowResized = true;
+                break;
 
             default:
                 break;
