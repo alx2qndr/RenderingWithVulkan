@@ -1,0 +1,47 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            }
+        },
+        {
+            "name": "debug",
+            "inherits": "base",
+            "displayName": "Debug (64-bit)",
+            "description": "Debug build for 64-bit architecture",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "inherits": "base",
+            "displayName": "Release (64-bit)",
+            "description": "Release build for 64-bit architecture",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-debug",
+            "displayName": "Build Debug (64-bit)",
+            "description": "Build the debug configuration for 64-bit",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "build-release",
+            "displayName": "Build Release (64-bit)",
+            "description": "Build the release configuration for 64-bit",
+            "configurePreset": "release"
+        }
+    ]
+}
